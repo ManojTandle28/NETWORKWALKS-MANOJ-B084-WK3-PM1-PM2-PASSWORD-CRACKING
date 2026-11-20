@@ -18,17 +18,6 @@
 
 ---
 
-## 👤 Author & Acknowledgements
-
-**Manoj Santosh Tandle**  
-*Cybersecurity Intern — Batch B084*  
-*Specialization: Cybersecurity, Penetration Testing & SOC Operations*  
-*GitHub Profile:* [ManojTandle28](https://github.com/ManojTandle28)
-
-Special appreciation to our instructor **Waqas Karim CCIE** and the **NetworkWalks** team for structured mentorship, hands-on lab environments, and practical cybersecurity training.
-
----
-
 ## 📌 Project Metadata
 
 - **Program:** NetworkWalks Cybersecurity Internship
@@ -66,6 +55,7 @@ Special appreciation to our instructor **Waqas Karim CCIE** and the **NetworkWal
 - [12. Real Troubleshooting Experience](#12-real-troubleshooting-experience)
 - [13. Practical Evidence & Screenshot Index](#13-practical-evidence--screenshot-index)
 - [14. Learning Outcomes & Professional Reflection](#14-learning-outcomes--professional-reflection)
+- [15. Author & Acknowledgements](#-author--acknowledgements)
 
 ---
 
@@ -162,7 +152,7 @@ The extracted hash files were loaded into Johnny via **Open password file**, and
 * **Target Hash:** `my hash2.txt` ($pdf$4*4*128...)
 * **Attack Progress:** 100% (1/1 cracked)
 * **Recovered Password:** `password1`
-* **Vulnerability Analysis:** High-frequency default credential following a standard capital-word-plus-digit structure.
+* **Vulnerability Analysis:** Highly predictable baseline password with standard capitalization and trailing single-digit numeric appendage.
 
 ![Figure 4: Johnny GUI PDF 2 Cracked](screenshots/04_johnny_pdf2_cracked.png)
 *Figure 4: Johnny GUI password recovery (`password1`) for Target PDF 2.*
@@ -358,6 +348,17 @@ Completing the Week 3 practical modules provided valuable insights into authenti
 2. **Cryptographic Key Derivation Analysis:** Understood how symmetric keys are derived from human-memorized passwords and why legacy key derivation functions (MD5 without iterations) fail to protect offline data.
 3. **Behavioral Password Patterns:** Observed firsthand how common patterns (dictionary words, default credentials, keyboard walks) undermine security even when alphanumeric characters are included.
 4. **Defensive Identity Engineering:** Reinforced the vital importance of multi-factor authentication, enterprise password managers, and modern cryptographic standards in defending against credential compromise.
+
+---
+
+## 👤 Author & Acknowledgements
+
+**Manoj Santosh Tandle**  
+*Cybersecurity Intern — Batch B084*  
+*Specialization: Cybersecurity, Penetration Testing & SOC Operations*  
+*GitHub Profile:* [ManojTandle28](https://github.com/ManojTandle28)
+
+Special appreciation to our instructor **Waqas Karim CCIE** and the **NetworkWalks** team for structured mentorship, hands-on lab environments, and practical cybersecurity training.
 
 ---
 
