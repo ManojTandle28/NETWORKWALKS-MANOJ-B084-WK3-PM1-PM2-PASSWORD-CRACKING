@@ -1,12 +1,21 @@
-# Educational & Portfolio License
+# Educational Portfolio & Fair Use Notice
 
-Copyright (c) 2026 Manoj Santosh Tandle
+Copyright (c) 2026 Manoj Santosh Tandle. 
+All personal documentation, technical notes, and markdown write-ups authored by the creator are shared for academic, research, and non-commercial portfolio review purposes.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this portfolio repository and associated documentation files, to view, study,
-and use the materials for educational, research, and technical portfolio review
-purposes, subject to the condition that proper attribution is maintained.
+---
 
-All educational exercises, lab frameworks, and associated trademarks belong to
-their respective owners (NetworkWalks). The materials presented herein are
-documented solely for educational demonstration and cybersecurity learning.
+## 1. Third-Party Intellectual Property & Trademarks
+* **NetworkWalks Training Academy:**  
+  "NetworkWalks", associated course materials, syllabus structure, and lab challenge designs are the exclusive property and copyright of **NetworkWalks Training Academy** and instructor **Waqas Karim (CCIE)**.
+* **Open-Source Security Tools:**  
+  - **John the Ripper (JTR)** is developed by Solar Designer and the Openwall Project.
+  - **Johnny GUI** is developed and maintained by the Openwall community.
+  - All referenced third-party software tools remain the property of their respective creators and licensors.
+
+---
+
+## 2. Scope of Original Work & Attribution
+* **Student Contributions:** The author of this repository (Manoj Santosh Tandle) claims authorship only over the original documentation write-ups, analysis logs, troubleshooting notes, and practical performance evidence.
+* **No Commercial Rights Claimed:** This repository does NOT claim copyright over, nor does it attempt to monetize or commercialize, any third-party training materials, challenge scenarios, or software.
+* **Educational Fair Use:** All screenshots, hash formats, and lab workflows are documented strictly under educational fair use for personal portfolio showcase and academic validation.

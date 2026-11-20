@@ -59,12 +59,15 @@
 
 ---
 
-# 1. Liability Disclaimer
+# 1. Liability Disclaimer & Academic Scoping
 
 > **LEGAL & ETHICAL STATEMENT:**  
 > All security exercises, hash extraction procedures, and password auditing activities documented in this repository were conducted strictly within an authorized educational laboratory environment provided by NetworkWalks. Testing was performed exclusively against designated academic target files (`My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf`). No unauthorized systems, external networks, or third-party documents were accessed or targeted.
 >
 > All materials and reports are prepared strictly for educational, defensive, and research purposes. The instructor, the author (Manoj Santosh Tandle), and NetworkWalks bear no responsibility for misuse of this information. Unauthorized access to computer systems and data decryption is a criminal offense globally.
+>
+> **ACADEMIC ATTRIBUTION & THIRD-PARTY IP NOTICE:**  
+> All course modules, instructional designs, and challenge lab scenarios are the intellectual property of **NetworkWalks Training Academy** and instructor **Waqas Karim (CCIE)**. This repository serves strictly as an independent student learning portfolio and academic record. The author claims authorship only over original documentation write-ups, analysis logs, and practical evidence.
 
 ---
 
@@ -344,7 +347,7 @@ All primary screenshot evidence is organized within the repository:
 # 14. Learning Outcomes & Professional Reflection
 
 Completing the Week 3 practical modules provided valuable insights into authentication security and practical penetration testing:
-1. **Offline Auditing Competence:** Mastered offline password recovery workflows using John the Ripper and Johnny GUI on native Windows workstations.
+1. **Offline Auditing Practical Skills:** Gained hands-on experience with offline password recovery workflows using John the Ripper and Johnny GUI on native Windows workstations.
 2. **Cryptographic Key Derivation Analysis:** Understood how symmetric keys are derived from human-memorized passwords and why legacy key derivation functions (MD5 without iterations) fail to protect offline data.
 3. **Behavioral Password Patterns:** Observed firsthand how common patterns (dictionary words, default credentials, keyboard walks) undermine security even when alphanumeric characters are included.
 4. **Defensive Identity Engineering:** Reinforced the vital importance of multi-factor authentication, enterprise password managers, and modern cryptographic standards in defending against credential compromise.
