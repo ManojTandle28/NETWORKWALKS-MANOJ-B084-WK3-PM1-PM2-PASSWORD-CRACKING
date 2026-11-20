@@ -46,10 +46,10 @@ Special appreciation to our instructor **Waqas Karim CCIE** and the **NetworkWal
 
 ## 📑 Table of Contents
 
-- [1. Liability Disclaimer & Responsible Disclosure](#1-liability-disclaimer--responsible-disclosure)
+- [1. Liability Disclaimer](#1-liability-disclaimer)
 - [2. Project Overview & Objectives](#2-project-overview--objectives)
 - [3. Tools & Operating Environment](#3-tools--operating-environment)
-- [4. Credential Sanitization & Ethical Scoping](#4-credential-sanitization--ethical-scoping)
+- [4. Lab Scoping & Responsible Testing Governance](#4-lab-scoping--responsible-testing-governance)
 - [5. Module W3-PM1: Password Cracking with John the Ripper (Johnny GUI)](#5-module-w3-pm1-password-cracking-with-john-the-ripper-johnny-gui)
   - [5.1 Environment Configuration & Binary Linking](#51-environment-configuration--binary-linking)
   - [5.2 PDF Hash Extraction Methodology](#52-pdf-hash-extraction-methodology)
@@ -69,12 +69,12 @@ Special appreciation to our instructor **Waqas Karim CCIE** and the **NetworkWal
 
 ---
 
-# 1. Liability Disclaimer & Responsible Disclosure
+# 1. Liability Disclaimer
 
 > **LEGAL & ETHICAL STATEMENT:**  
-> All security exercises and auditing activities documented in this repository were conducted strictly within an authorized educational laboratory environment provided by NetworkWalks. Testing was performed exclusively against designated academic target files (`My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf`). No unauthorized systems, external networks, or third-party documents were accessed or targeted.
+> All security exercises, hash extraction procedures, and password auditing activities documented in this repository were conducted strictly within an authorized educational laboratory environment provided by NetworkWalks. Testing was performed exclusively against designated academic target files (`My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf`). No unauthorized systems, external networks, or third-party documents were accessed or targeted.
 >
-> In strict accordance with responsible disclosure principles and cybersecurity standards, **all recovered plaintext passwords have been obfuscated (`[REDACTED]`) in public documentation and sanitized in public screenshots**. All original unmasked artifacts and protected files are preserved locally and excluded from public version control.
+> All materials and reports are prepared strictly for educational, defensive, and research purposes. The instructor, the author (Manoj Santosh Tandle), and NetworkWalks bear no responsibility for misuse of this information. Unauthorized access to computer systems and data decryption is a criminal offense globally.
 
 ---
 
@@ -104,13 +104,14 @@ This project documents the practical exercises, cryptographic evaluations, and s
 
 ---
 
-# 4. Credential Sanitization & Ethical Scoping
+# 4. Lab Scoping & Responsible Testing Governance
 
-To maintain public repository security and uphold professional cybersecurity hygiene:
-* **Plaintext Obfuscation:** Recovered passwords are fully masked as `[REDACTED]` across all markdown reports.
-* **Screenshot Sanitization:** All screenshot figures displaying recovered password text have been sanitized with non-destructive, pixel-level redaction badges before inclusion in public documentation.
-* **Repository Exclusion:** Original locked lab PDFs and unmasked evidence are isolated locally and blocked from version control via `.gitignore`.
-* **Captured Flags:** Verified flags (`nw{...}`) are presented as legitimate CTF completion milestones confirming that document decryption was successfully achieved.
+### Academic Scoping Reference
+All password auditing and hash cracking exercises were performed strictly within defined educational parameters on instructor-assigned target PDF containers (`My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf`) provided as part of the NetworkWalks practical syllabus.
+
+* **Target Artifacts:** Designated lab challenge files provided for Batch B084.
+* **Controlled Environment:** Offline processing using local CPU execution (John the Ripper / Johnny GUI) and client-side browser testing (NetworkWalks Tools).
+* **Defensive Purpose:** Auditing password complexity, demonstrating the vulnerability of legacy PDF Revision 4 encryption handlers, and developing enterprise password policy recommendations.
 
 ---
 
@@ -151,29 +152,29 @@ The extracted hash files were loaded into Johnny via **Open password file**, and
 #### 1. Target PDF 1 Recovery
 * **Target Hash:** `my hash1.txt` ($pdf$4*4*128...)
 * **Attack Progress:** 100% (1/1 cracked)
-* **Outcome:** The credential was matched and recovered successfully.
+* **Recovered Password:** `good-luck`
 * **Vulnerability Analysis:** Vulnerable to wordlist matching; composed of dictionary words separated by a hyphen.
 
 ![Figure 3: Johnny GUI PDF 1 Cracked](screenshots/03_johnny_pdf1_cracked.png)
-*Figure 3: Johnny GUI password recovery for Target PDF 1 (Credential sanitized).*
+*Figure 3: Johnny GUI password recovery (`good-luck`) for Target PDF 1.*
 
 #### 2. Target PDF 2 Recovery
 * **Target Hash:** `my hash2.txt` ($pdf$4*4*128...)
 * **Attack Progress:** 100% (1/1 cracked)
-* **Outcome:** Successfully recovered within seconds.
+* **Recovered Password:** `password1`
 * **Vulnerability Analysis:** High-frequency default credential following a standard capital-word-plus-digit structure.
 
 ![Figure 4: Johnny GUI PDF 2 Cracked](screenshots/04_johnny_pdf2_cracked.png)
-*Figure 4: Johnny GUI password recovery for Target PDF 2 (Credential sanitized).*
+*Figure 4: Johnny GUI password recovery (`password1`) for Target PDF 2.*
 
 #### 3. Target PDF 3 Recovery
 * **Target Hash:** `my hash3.txt` ($pdf$4*4*128...)
 * **Attack Progress:** 100% (1/1 cracked)
-* **Outcome:** Successfully cracked and verified.
+* **Recovered Password:** `1qaz2wsx`
 * **Vulnerability Analysis:** Keyboard geometric walk pattern (`1-q-a-z` and `2-w-s-x`), easily defeated by pattern-based rule evaluation.
 
 ![Figure 5: Johnny GUI PDF 3 Cracked](screenshots/05_johnny_pdf3_cracked.png)
-*Figure 5: Johnny GUI password recovery for Target PDF 3 (Credential sanitized).*
+*Figure 5: Johnny GUI password recovery (`1qaz2wsx`) for Target PDF 3.*
 
 ---
 
@@ -196,25 +197,28 @@ The **NetworkWalks Password Cracker** executes dictionary attacks in the browser
 * **Parameters:** Dictionary attack against Target 1 hash.
 * **Execution Metrics:** ~16 passwords per second (`16 pw/s`).
 * **Match Milestone:** Successfully matched at candidate 3,456 of 3,556 (97% progress).
+* **Recovered Password:** `good-luck`
 
 ![Figure 6: NW Cracker PDF 1](screenshots/06_nw_cracker_pdf1.png)
-*Figure 6: NetworkWalks Password Cracker completing candidate recovery for Target 1.*
+*Figure 6: NetworkWalks Password Cracker successfully recovering `good-luck` for Target 1.*
 
 #### 2. Target PDF 2 Verification
 * **Parameters:** Loaded external dictionary `JTR_default_password.txt` (3,556 entries).
 * **Target Profile:** PDF R4 / 128-bit key derivation via MD5 + RC4.
 * **Match Milestone:** Rapid candidate match due to high prevalence in standard dictionaries.
+* **Recovered Password:** `password1`
 
 ![Figure 7: NW Cracker PDF 2](screenshots/07_nw_cracker_pdf2.png)
-*Figure 7: Custom wordlist processing and successful recovery for Target 2.*
+*Figure 7: Custom wordlist processing and successful recovery (`password1`) for Target 2.*
 
 #### 3. Target PDF 3 Verification
 * **Parameters:** Dictionary evaluation using `JTR_default_password.txt`.
 * **Execution Metrics:** ~16 passwords per second (`16 pw/s`).
 * **Match Milestone:** Matched at candidate 2,078 of 3,556 (58% progress).
+* **Recovered Password:** `1qaz2wsx`
 
 ![Figure 8: NW Cracker PDF 3](screenshots/08_nw_cracker_pdf3.png)
-*Figure 8: Candidate match confirmation for Target 3 in NetworkWalks Password Cracker.*
+*Figure 8: Candidate match confirmation (`1qaz2wsx`) for Target 3 in NetworkWalks Password Cracker.*
 
 ---
 
@@ -253,11 +257,11 @@ $pdf$4*4*128*-1028*1*16*[Salt]*32*[U-String]*32*[O-String]
 
 To verify password recovery viability, each unlocked credential was entered into the native PDF viewer, decrypting the container and capturing the completion flag:
 
-| Target Container | Encryption Specification | Auditing Tools | Decryption Status | Captured Verification Flag |
-|---|---|---|---|---|
-| **My Locked PDF1.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `nw{cybersecurity_flag_captured_2608}` |
-| **My Locked PDF2.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `nw{networkwalks_persistence_jtr_270521}` |
-| **My Locked PDF3.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `nw{networkwalks_flag_260821_1}` |
+| Target Container | Encryption Specification | Auditing Tools | Decryption Status | Recovered Password | Captured Verification Flag |
+|---|---|---|---|---|---|
+| **My Locked PDF1.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `good-luck` | `nw{cybersecurity_flag_captured_2608}` |
+| **My Locked PDF2.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `password1` | `nw{networkwalks_persistence_jtr_270521}` |
+| **My Locked PDF3.pdf** | PDF R4 / 128-bit MD5+RC4 | Johnny GUI & NW Cracker | **Successfully Decrypted** | `1qaz2wsx` | `nw{networkwalks_flag_260821_1}` |
 
 ### Decryption Evidence Previews
 
@@ -281,9 +285,9 @@ From a Security Operations Center (SOC) and defensive posture assessment perspec
 
 | Risk ID | Observed Weakness | Technical Context | Threat Scenario | Defensive Severity |
 |---|---|---|---|---|
-| **NW-W3-01** | High-Prevalence Common Credential | Target 2 utilized a predictable base word with trailing digit | Exploitation via automated credential stuffing and default dictionary lists | **● High** |
+| **NW-W3-01** | High-Prevalence Common Credential | Target 2 utilized a predictable base word with trailing digit (`password1`) | Exploitation via automated credential stuffing and default dictionary lists | **● High** |
 | **NW-W3-02** | Keyboard Walk Geometry | Target 3 utilized adjacent physical vertical keys (`1qaz2wsx`) | Defeated rapidly by rule-based spatial mutation engines | **● High** |
-| **NW-W3-03** | Dictionary Word with Punctuation | Target 1 utilized basic dictionary words separated by a hyphen | Easily cracked by wordlist combinations without sufficient character entropy | **● Medium** |
+| **NW-W3-03** | Dictionary Word with Punctuation | Target 1 utilized basic dictionary words separated by a hyphen (`good-luck`) | Easily cracked by wordlist combinations without sufficient character entropy | **● Medium** |
 | **NW-W3-04** | Legacy PDF Encryption Handler | Revision 4 handler utilizes MD5 key derivation without key-stretching | Allows high-speed offline brute-force attacks without computational throttling | **● Medium** |
 | **NW-W3-05** | Lack of Rate Limiting in Offline Containers | Encrypted file formats do not enforce attempt limits | Offline cracking speed is limited only by attacker computational resources | **● Medium** |
 
@@ -335,12 +339,12 @@ All primary screenshot evidence is organized within the repository:
 |---|---|---|---|
 | **Figure 1** | Johnny GUI Configuration & Linking | [`screenshots/01_johnny_setup_configuration.png`](screenshots/01_johnny_setup_configuration.png) | Detected JTR 1.9.0-jumbo-1 64-bit AVX2 |
 | **Figure 2** | PDF Hash Extraction | [`screenshots/02_pdf1_hash_extraction.png`](screenshots/02_pdf1_hash_extraction.png) | Parsed Revision 4 128-bit `$pdf$` signature |
-| **Figure 3** | Johnny GUI Target 1 Cracked | [`screenshots/03_johnny_pdf1_cracked.png`](screenshots/03_johnny_pdf1_cracked.png) | Target 1 100% cracked (Sanitized) |
-| **Figure 4** | Johnny GUI Target 2 Cracked | [`screenshots/04_johnny_pdf2_cracked.png`](screenshots/04_johnny_pdf2_cracked.png) | Target 2 100% cracked (Sanitized) |
-| **Figure 5** | Johnny GUI Target 3 Cracked | [`screenshots/05_johnny_pdf3_cracked.png`](screenshots/05_johnny_pdf3_cracked.png) | Target 3 100% cracked (Sanitized) |
-| **Figure 6** | NW Password Cracker Target 1 | [`screenshots/06_nw_cracker_pdf1.png`](screenshots/06_nw_cracker_pdf1.png) | 3,456/3,556 (97%) matched (Sanitized) |
-| **Figure 7** | NW Password Cracker Target 2 | [`screenshots/07_nw_cracker_pdf2.png`](screenshots/07_nw_cracker_pdf2.png) | Wordlist loaded; candidate matched (Sanitized) |
-| **Figure 8** | NW Password Cracker Target 3 | [`screenshots/08_nw_cracker_pdf3.png`](screenshots/08_nw_cracker_pdf3.png) | 2,078/3,556 (58%) matched (Sanitized) |
+| **Figure 3** | Johnny GUI Target 1 Cracked | [`screenshots/03_johnny_pdf1_cracked.png`](screenshots/03_johnny_pdf1_cracked.png) | Target 1 100% cracked (`good-luck`) |
+| **Figure 4** | Johnny GUI Target 2 Cracked | [`screenshots/04_johnny_pdf2_cracked.png`](screenshots/04_johnny_pdf2_cracked.png) | Target 2 100% cracked (`password1`) |
+| **Figure 5** | Johnny GUI Target 3 Cracked | [`screenshots/05_johnny_pdf3_cracked.png`](screenshots/05_johnny_pdf3_cracked.png) | Target 3 100% cracked (`1qaz2wsx`) |
+| **Figure 6** | NW Password Cracker Target 1 | [`screenshots/06_nw_cracker_pdf1.png`](screenshots/06_nw_cracker_pdf1.png) | 3,456/3,556 (97%) matched (`good-luck`) |
+| **Figure 7** | NW Password Cracker Target 2 | [`screenshots/07_nw_cracker_pdf2.png`](screenshots/07_nw_cracker_pdf2.png) | Wordlist loaded; candidate matched (`password1`) |
+| **Figure 8** | NW Password Cracker Target 3 | [`screenshots/08_nw_cracker_pdf3.png`](screenshots/08_nw_cracker_pdf3.png) | 2,078/3,556 (58%) matched (`1qaz2wsx`) |
 | **Figure 9** | Unlocked PDF 1 Verification Flag | [`screenshots/09_unlocked_pdf1_flag1_verification.png`](screenshots/09_unlocked_pdf1_flag1_verification.png) | Flag 1: `nw{cybersecurity_flag_captured_2608}` |
 | **Figure 10** | Unlocked PDF 2 Verification Flag | [`screenshots/10_unlocked_pdf2_flag2_verification.png`](screenshots/10_unlocked_pdf2_flag2_verification.png) | Flag 2: `nw{networkwalks_persistence_jtr_270521}` |
 | **Figure 11** | Unlocked PDF 3 Verification Flag | [`screenshots/11_unlocked_pdf3_flag3_verification.png`](screenshots/11_unlocked_pdf3_flag3_verification.png) | Flag 3: `nw{networkwalks_flag_260821_1}` |

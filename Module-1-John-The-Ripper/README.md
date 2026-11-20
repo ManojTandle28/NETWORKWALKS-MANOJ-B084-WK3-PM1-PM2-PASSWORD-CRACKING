@@ -55,31 +55,31 @@ Prior to executing offline dictionary attacks in JTR, cryptographic metadata mus
 Each target hash was imported into Johnny via **Open password file**, followed by initiating an automated attack (**Start new attack**).
 
 ### 1. Target PDF 1
-* **Input Target:** Extracted hash from `My Locked PDF1.pdf`.
+* **Input Target:** Extracted hash from `My Locked PDF1.pdf` (`my hash1.txt`).
 * **Execution Status:** 100% completed (1/1 cracked).
-* **Observed Vulnerability:** Password comprised of standard dictionary words with hyphenation. Easily resolved through basic dictionary wordlist matching.
-* **Security Redaction:** Plaintext credential masked under responsible disclosure guidelines (`[REDACTED]`).
+* **Recovered Password:** `good-luck`
+* **Vulnerability Analysis:** Composed of standard dictionary words with a hyphen. Easily resolved through basic dictionary wordlist matching.
 
 ![Johnny PDF 1 Result](Screenshots/03_johnny_pdf1_cracked.png)
-*Figure M1-3: Successful password recovery for Target 1 in Johnny GUI.*
+*Figure M1-3: Successful password recovery (`good-luck`) for Target 1 in Johnny GUI.*
 
 ### 2. Target PDF 2
-* **Input Target:** Extracted hash from `My Locked PDF2.pdf`.
+* **Input Target:** Extracted hash from `My Locked PDF2.pdf` (`my hash2.txt`).
 * **Execution Status:** 100% completed (1/1 cracked).
-* **Observed Vulnerability:** Highly predictable baseline password with standard capitalization and trailing single-digit numeric appendage. Matches global top-10 common password dictionaries instantly.
-* **Security Redaction:** Plaintext credential masked (`[REDACTED]`).
+* **Recovered Password:** `password1`
+* **Vulnerability Analysis:** Highly predictable baseline password with standard capitalization and trailing single-digit numeric appendage. Matches global top-10 common password dictionaries instantly.
 
 ![Johnny PDF 2 Result](Screenshots/04_johnny_pdf2_cracked.png)
-*Figure M1-4: Successful password recovery for Target 2 in Johnny GUI.*
+*Figure M1-4: Successful password recovery (`password1`) for Target 2 in Johnny GUI.*
 
 ### 3. Target PDF 3
-* **Input Target:** Extracted hash from `My Locked PDF3.pdf`.
+* **Input Target:** Extracted hash from `My Locked PDF3.pdf` (`my hash3.txt`).
 * **Execution Status:** 100% completed (1/1 cracked).
-* **Observed Vulnerability:** Keyboard walking sequence across adjacent vertical physical keys. While alphanumeric, spatial key adjacency rules recover such patterns rapidly.
-* **Security Redaction:** Plaintext credential masked (`[REDACTED]`).
+* **Recovered Password:** `1qaz2wsx`
+* **Vulnerability Analysis:** Keyboard walking sequence across adjacent vertical physical keys (`1-q-a-z` and `2-w-s-x`). While alphanumeric, spatial key adjacency rules recover such patterns rapidly.
 
 ![Johnny PDF 3 Result](Screenshots/05_johnny_pdf3_cracked.png)
-*Figure M1-5: Successful password recovery for Target 3 in Johnny GUI.*
+*Figure M1-5: Successful password recovery (`1qaz2wsx`) for Target 3 in Johnny GUI.*
 
 ---
 

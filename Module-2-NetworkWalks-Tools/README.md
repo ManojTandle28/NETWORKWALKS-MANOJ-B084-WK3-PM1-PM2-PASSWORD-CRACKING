@@ -38,29 +38,32 @@ The objective was exploring browser-native cryptographic evaluation tools, perfo
 * **Wordlist Parameter:** Standard dictionary iteration.
 * **Throughput:** Evaluated at ~16 passwords per second (`16 pw/s`).
 * **Progress:** Match achieved at entry 3,456 of 3,556 (97% completion).
+* **Recovered Password:** `good-luck`
 * **Finding:** Weak dictionary phrase structure vulnerable to sequential wordlist evaluation.
 
 ![NW Cracker PDF 1 Result](Screenshots/01_nw_cracker_pdf1.png)
-*Figure M2-1: NetworkWalks Password Cracker completing candidate recovery for Target 1.*
+*Figure M2-1: NetworkWalks Password Cracker successfully recovering `good-luck` for Target 1.*
 
 ### 2. Target PDF 2 Auditing
 * **Tool Interface:** NetworkWalks Password Cracker.
 * **Wordlist Parameter:** Loaded custom wordlist `JTR_default_password.txt` (3,556 entries).
 * **Target Profile:** PDF R4 / 128-bit key derivation via MD5 + RC4.
+* **Recovered Password:** `password1`
 * **Finding:** Standard default credential matched rapidly early in the wordlist sequence due to high real-world prevalence.
 
 ![NW Cracker PDF 2 Result](Screenshots/02_nw_cracker_pdf2.png)
-*Figure M2-2: Custom wordlist processing and successful recovery for Target 2.*
+*Figure M2-2: Custom wordlist processing and successful recovery (`password1`) for Target 2.*
 
 ### 3. Target PDF 3 Auditing
 * **Tool Interface:** NetworkWalks Password Cracker.
 * **Wordlist Parameter:** `JTR_default_password.txt`.
 * **Throughput:** Sustained ~16 passwords per second (`16 pw/s`).
 * **Progress:** Match achieved at entry 2,078 of 3,556 (58% completion).
+* **Recovered Password:** `1qaz2wsx`
 * **Finding:** Alphanumeric keyboard pattern cracked via standard dictionary inclusion.
 
 ![NW Cracker PDF 3 Result](Screenshots/03_nw_cracker_pdf3.png)
-*Figure M2-3: Candidate match confirmation for Target 3 at 58% search space completion.*
+*Figure M2-3: Candidate match confirmation (`1qaz2wsx`) for Target 3 at 58% search space completion.*
 
 ---
 
