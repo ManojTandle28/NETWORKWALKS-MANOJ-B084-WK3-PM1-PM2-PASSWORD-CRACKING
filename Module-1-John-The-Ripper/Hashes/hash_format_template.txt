@@ -1,0 +1,21 @@
+# John the Ripper PDF Hash Format Specification
+# -------------------------------------------------------------
+# Syntax:
+# $pdf$4*4*128*-1028*1*16*[Salt]*32*[U-String]*32*[O-String]
+#
+# Field Definitions:
+# Field 1:  $pdf$       -> JTR Hash Type Identifier
+# Field 2:  4           -> PDF Version / Security Handler Spec
+# Field 3:  4           -> Revision Number (Revision 4 - Acrobat 7+ standard)
+# Field 4:  128         -> Key Length in Bits (128-bit symmetric cipher)
+# Field 5:  -1028       -> Document Permission Flags (Integer bitmask)
+# Field 6:  1           -> EncryptMetadata Flag (1 = Metadata Encrypted)
+# Field 7:  16          -> File ID / Salt Length in Bytes (32 hex characters)
+# Field 8:  [Salt]      -> Document Salt Hex String
+# Field 9:  32          -> User Validation String (U) Length in Bytes (64 hex characters)
+# Field 10: [U-String]  -> User Password Validation Block
+# Field 11: 32          -> Owner Password String (O) Length in Bytes (64 hex characters)
+# Field 12: [O-String]  -> Owner Password Hash Block
+#
+# Sanitized Educational Example:
+$pdf$4*4*128*-1028*1*16*00112233445566778899aabbccddeeff*32*00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff*32*00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff

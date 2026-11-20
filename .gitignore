@@ -1,0 +1,28 @@
+# Operating System Files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sensitive Security Data & Original Evidence
+# Preserves ethical disclosure standards by preventing exposure of raw files
+original_evidence/
+*.pdf
+!Assignment_Instructions/*.pdf
+my hash*.txt
+*password*.txt
+*.tmp
+temp/
+scratch/
+test_sanitize/
+
+# Node & Python temporary files
+node_modules/
+npm-debug.log
+__pycache__/
+*.pyc
